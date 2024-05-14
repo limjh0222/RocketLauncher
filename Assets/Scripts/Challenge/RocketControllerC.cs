@@ -28,9 +28,15 @@ public class RocketControllerC : MonoBehaviour
     }
 
     // OnMove 구현
-    // private void OnMove...
+    private void OnMove()
+    {
+        
+    }
 
 
     // OnBoost 구현
-    // private void OnBoost...
+    private void OnBoost()
+    {
+        _energySystem.CallEnergyChanged();
+    }
 }

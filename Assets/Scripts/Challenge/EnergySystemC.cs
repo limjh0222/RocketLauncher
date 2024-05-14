@@ -16,7 +16,14 @@ public class EnergySystemC : MonoBehaviour
 
     private void Update()
     {
-        Fuel += Time.deltaTime;
-        OnEnergyChanged?.Invoke(Fuel);
+        if(Fuel < MaxFuel)
+        {
+            Fuel += Time.deltaTime;
+        }
+    }
+
+    public void CallEnergyChanged()
+    {
+        OnEnergyChanged?.Invoke(2);
     }
 }
