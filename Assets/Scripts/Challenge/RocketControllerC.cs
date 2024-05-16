@@ -37,6 +37,6 @@ public class RocketControllerC : MonoBehaviour
     // OnBoost 구현
     private void OnBoost()
     {
-        _energySystem.CallEnergyChanged();
+        _energySystem.CallEnergyChanged(ENERGY_BURST);
     }
 }

@@ -13,13 +13,19 @@ public class EnergyDashboardC : MonoBehaviour
         energySystem.OnEnergyChanged += EnergyChanged;
     }
 
-    private void FixedUpdate()
+    private void Update()
+    {
+        energySystem.RecoveryEnergy();
+        UpdateEnergyDashboard();
+    }
+
+    private void UpdateEnergyDashboard()
     {
         fillBar.transform.localScale = new Vector3(energySystem.Fuel / energySystem.MaxFuel, 1, 1);
     }
 
-    private void EnergyChanged(float fuel)
+    private void EnergyChanged(float energyBurst)
     {
-        energySystem.UseEnergy(fuel);
+        energySystem.UseEnergy(energyBurst);
     }
 }
